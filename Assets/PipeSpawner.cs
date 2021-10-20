@@ -27,6 +27,8 @@ public class PipeSpawner : MonoBehaviour
                 {
                     // normal pipe
                     GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    var cubeRenderer = cube.GetComponent<Renderer>();
+                    cubeRenderer.material.SetColor("_Color", Color.green);
                     cube.transform.position = new Vector3(300f, (int)Random.Range(-110, 110), 0);
                     cube.transform.localScale = new Vector3(25, 25, 25);
                     cube.AddComponent<PipeMove>();
